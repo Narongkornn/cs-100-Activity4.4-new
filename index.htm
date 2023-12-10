@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="elementadded.css">
+</head>
+<body>
+    <header>
+        <div class="container_1"  >
+            <div class="nav-wrapper" id="navbar"style="z-index: 2;">
+                <div class="left">
+                    <h3 class="logo">
+                        ปูนพร้อมก่อ สุดหล่อพร้อมยัง
+                    </h3>
+                </div>
+                    <ul class="menu" id="myMenu">
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="../index.html#members">Members</a></li>
+                        <li><a href="html/OurActivity.html">Our activities</a></li>
+                        <li><a href="https://drive.google.com/file/d/1z4ppSxmN6A6XSvfpVWq15ll4weuFnOU8/view?usp=drivesdk" target="_blank">Donate</a></li>
+                    </ul>
+                <div class="ham-menu" onclick="toggleHam(this)">
+                    <div class="bar1"></div>
+                    <div class="bar2"></div>
+                    <div class="bar3"></div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="catainer1">
+        <div class="container">
+            <form id="form" class="form" action="#" method="post">
+                <h2>Register with us</h2>
+                <div class="form-control">
+                    <label for="username">Firstname and Lastname</label>
+                    <input type="text" id="username" placeholder="Kittamet Dosdo" required>
+                    <p id="descrip">Only enter your first name and last name, middle name is not necessary.</p>
+                    <small>Error message</small>
+                </div>
+                <div class="form-control">
+                    <label for="StudentID">StudentID</label>
+                    <input type="text" id="StudentID" placeholder="6609611xxx" required>
+                    <p id="descrip2">Please enter your 10-digit student ID.</p>
+                    <small>Error message</small>
+                    <div>
+                        <p id="yeyydas"> Your scholastic year is
+                        <span id="Myear"></span>
+                        </p>
+                        <p id="yeyydass"> Your Faculty is
+                      <span id="MyFaci"></span>
+                        </p>
+                    </div>
+                </div>
+                <div class="form-control">
+                    <label for="email">Email</label>
+                    <input type="text" id="email" placeholder="Enter email" required>
+                    <p id="descrip">Please provide your university email in the format "xxxxxx.yyy@dome.tu.ac.th".</p>
+                    <small>Error message</small>
+                </div>
+                <div class="form-control">
+                    <label for="phone">Phone number</label>
+                    <input type="text" id="phone" placeholder="Enter your phone number" required>
+                    <p id="descrip">Please enter your 10-digit telephone number.</p>
+                    <small>Error message</small>
+                </div>
+                <div class="form-control">
+                    <label for="title">Work/Activity Title</label>
+                    <input type="text" id="title" placeholder="Enter title" required>
+                    <p id="descrip">*Required</p>
+                    <small>Error message</small>
+                </div>
+
+                <div class="form-control">
+                    <label for="image">Image :</label>
+                    <input type="file" id="image" name="image" accept="image/*" required onchange="previewImage()">
+                    <p id="descrip">*Required</p>
+                </div>
+                <!-- Type of Work/Activity Field
+                <div class="form-control">
+                    <label for="activityType" id="activity">Type of Work/Activity</label>
+                    <select id="activityType" name="activityType">
+                        <option value="" disabled selected>Select an option</option>
+                    </select>
+                    <p id="descrip">*Required</p>
+                    <small>Error message</small>
+                </div> -->
+                <!-- <div class="form-group">
+                    <label for="activityType">Type of Work/Activity</label>
+                    <select id="activityType" name="activityType">
+                        <option value="" disabled selected>Select an option</option>
+                        <option value="Course">Course</option>
+                        <option value="Activity">Activity</option>
+                        <option value="Work">Work</option>
+                        <option value="Research">Research</option>
+                        <option value="Sports">Sports</option>
+                        <option value="Competition">Competition</option>
+                        <option value="Computer Science">Computer Science</option>
+                    </select>
+                </div> -->
+                <!-- Academic Year Field -->
+                <div class="form-control">
+                    <label for="academicYear">Academic Year</label>
+                    <select id="academicYear" name="academicYear" required>
+                        <option value="" disabled selected>Select an option</option>
+                        <option value="2561">2561</option>
+                        <option value="2562">2562</option>
+                        <option value="2563">2563</option>
+                        <option value="2564">2564</option>
+                        <option value="2565">2565</option>
+                        <option value="2566">2566</option>
+                        <option value="2567">2567</option>
+                        <option value="2568">2568</option>
+                        <option value="2569">2569</option>
+                    </select>
+                    <p id="descrip">*Required</p>
+                    <small>Error message</small>
+                </div>
+
+                <div class="form-control">
+                    <label for="semester">Semester</label>
+                    <select id="semester" name="semester" required>
+                        <option value="" disabled selected>Select an option</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="summer">summer</option>
+                    </select>
+                    <p id="descrip">*Required</p>
+                    <small>Error message</small>
+                </div>
+                <!-- Start Date/Time Field -->
+                <div class="form-control">
+                    <label for="startDate">Start Date/Time</label>
+                    <input type="datetime-local" id="startDate" name="startDate" required/>
+                    <p id="descrip">*Required</p>
+                </div>
+
+                <!-- End Date/Time Field -->
+                <div class="form-control">
+                    <label for="endDate">End Date/Time</label>
+                    <input type="datetime-local" id="endDate" name="endDate" required/>
+                    <p id="descrip">*Required</p>
+                </div>
+
+                <div class="form-control">
+                    <label for="location">Location</label>
+                    <input type="text" id="location" placeholder="Enter location" required>
+                    <p id="descrip">Please enter location where you did.</p>
+                    <small>Error message</small>
+                </div>
+                <div class="form-control">
+                    <label for="description">Description</label>
+                    <textarea type="text" id="description" placeholder="Enter description"></textarea>
+                    <p id="descrip">*Required</p>
+                    <small>Error message</small>
+                </div>
+            
+                <div class="form-control">
+                    <input type="submit" value="Submit" />
+                </div>
+            </form>
+        </div>
+    </div>
+    <footer id="footer">
+        <div class="copyright">
+            <div class="containercopyright">
+                <div class="copyright-flex">
+                    <div class="copytext">
+                        <p>Copyright @2023 </p>
+                    </div>
+                </div>
+                <!-- copyright-grid -->
+    
+            </div>
+            <!-- container -->
+    
+        </div>
+        <!-- copyright -->
+    </footer>
+
+    <script src="https://kit.fontawesome.com/137eea12a2.js" crossorigin="anonymous"></script>  
+    <script src="/js/ss.js"></script>
+    <script src="/js/ff.js"></script>
+</body>
+</html>
